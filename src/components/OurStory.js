@@ -9,7 +9,7 @@ const OurStory = props => {
         <div className="col-md-5 col-sm-10 col-xs-10 d-flex justify-content-center">
           <img src={`/hiking.jpg`} />
         </div>
-        <div className="col-md-4 col-sm-10 col-xs-10">
+        <div className="col-md-5 col-sm-10 col-xs-10">
           <h3>Our Story</h3>
           <p>Merkki is a sports and athleisure brand with a focus on practicality and minimalism. The brand creators pursued their idea of staying active and applied this concept within Merkki.</p>
 

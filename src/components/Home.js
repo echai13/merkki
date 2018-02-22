@@ -16,7 +16,7 @@ class Home extends Component {
         <Manufacture />
         <hr className="letter-manu" />
         <Newsletter />
-        <hr className="manu-footer"/>
+        {/* <hr className="manu-footer"/> */}
         <Footer />
       </div>
     )

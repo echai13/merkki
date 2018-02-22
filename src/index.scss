@@ -2,9 +2,22 @@ $peach: #ffe0d3;
 $warm-blue: #7d9296;
 $dark-aqua-blue: #7accc8;
 
+$blue-white: ghostwhite;
+$golden-yellow: #f4ba00;
+$blue-grey: #e0e8eb;
+$pastel-blue: #99d8dd;
+$mid-blue: #5cb4c2;
+$teal-blue: #02587b;
+
+$stack-1: 100;
+$stack-2: 200;
+$stack-3: 300;
+$stack-4: 400;
+$stack-5: 500;
+
 body {
   overflow-x: hidden !important;
-  background-color: $warm-blue;
+  background-color: $blue-white;
   hr {
     margin-top: 0;
     margin-bottom: 0;
@@ -30,15 +43,14 @@ body {
   div.container-fluid {
     padding: 0;
     .row {
-      margin-left: 0px !important;
-      margin-right: 0px !important;
+      margin: 3em 0px !important;
     }
   }
 
   div.design-banner {
     width: 100vw;
     background-color: $warm-blue;
-    background: url('https://images.pexels.com/photos/132204/pexels-photo-132204.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb') no-repeat center;
+    background: url('/navy-blue-stripes.jpg') no-repeat center;
     background-size: cover;
     height: 0.7em;
     position: fixed;
@@ -47,21 +59,25 @@ body {
 
   div#my-navbar {
     padding-top: 0.5em;
-    div.navbar {
+    nav.navbar {
+      margin-top: 0.7em;
       padding-top: 2.1em;
-      background-color: #ffe0d3;
+      background-color: $blue-white !important;
       padding-bottom: 1.5em;
-      z-index: 100;
-
+      z-index: $stack-2;
+      button {
+        right: 15px;
+        // position: fixed;
+      }
       a.navbar-brand  {
-        position: fixed;
+        // position: fixed;
         img {
-          width: 7em;
+          width: 18vh;
         }
       }
 
       div.collapse.navbar-collapse {
-        position: fixed;
+        float: right;
         right: 1em;
         input {
           text-align: center;
@@ -72,20 +88,39 @@ body {
         }
         button {
           background-color: transparent;
-          padding: 0.5em;
-          border: 1px solid;
+          border: none;
+        }
+        a {
+          color: $teal-blue;
         }
       }
     }
-
+    @media only screen and (max-width: 768px) {
+      div.side-navbar {
+        position: absolute;
+        z-index: $stack-1;
+      }
+    }
+    @media only screen and (min-width: 768px) {
+      div.side-navbar {
+        position: fixed;
+        z-index: $stack-1;
+      }
+      nav.navbar {
+        background-color: transparent !important;
+        div.collapse.navbar-collapse {
+          position: fixed;
+        }
+      }
+    }
     div.side-navbar {
-      position: fixed;
-      z-index: 100;
+      margin-top: 15vh;
       ul.flex-column li a {
         letter-spacing: 0.1em;
         font-family: Times;
+        color: $teal-blue;
       }
-      div.categories {
+      span.categories {
         margin-top: 2em;
         li a {
           letter-spacing: 0em;
@@ -97,10 +132,12 @@ body {
   }
 
   div#top-banner {
-    background-color: $peach;
+    background-color: $blue-white;
     min-height: 100vh;
+    margin: 7em auto;
     div.row {
-      height: 100vh;
+      min-height: 100vh;
+      margin: 0 auto !important;
     }
     img {
       max-height: 90vh;
@@ -111,7 +148,7 @@ body {
   }
 
   div#our-story {
-    background-color: $peach;
+    background-color: $blue-white;
     min-height: 100vh;
     img {
       width: auto;
@@ -123,18 +160,18 @@ body {
       font-family: Britannic Bold;
       font-size: 4em;
       text-align: center;
-      color: slategrey;
+      color: $golden-yellow;
     }
     p {
       font-size: 1.3em;
       font-family: Times;
-      color: navy;
+      color: $teal-blue;
     }
   }
 
   div#newsletter {
-    background-color: $peach;
-    height: 100vh;
+    background-color: $blue-white;
+    min-height: 100vh;
     text-align: center;
     div.row {
       padding: 7vw;
@@ -151,6 +188,7 @@ body {
     }
     h4 {
       font-family: Britannic Bold;
+      color: $golden-yellow;
       font-size: 2.5em;
     }
   }
@@ -168,33 +206,54 @@ body {
     }
     h4 {
       font-size: 6.5vw;
-      color: lightslategrey;
+      color: $golden-yellow;
       font-family: Britannic Bold;
     }
     p {
       font-size: 1.3em;
       font-family: Times;
-      color: navy;
+      color: $teal-blue;
       padding: 3vw;
           }
   }
 
   div#footer {
     height: 50vh;
-    background-color: $warm-blue;
     margin-top: 1.5em;
 
     div.row {
-      h4 {
-        font-size: 1.5em;
-        color: $peach;
+      text-align: center;
+      &.information {
+        height: 50vh;
+        background: linear-gradient(rgba(8, 14, 21, 0.5), rgba(0, 0, 0, 0.5)), url(/bike-city.jpeg) no-repeat center;
+        width: 90vw;
+        background-size: cover;
+        h2 {
+          font-family: Britannic Bold;
+          color: $blue-white;
+        }
+        h4 {
+          font-size: 1.5em;
+          color: $mid-blue;
+          font-family: Times;
+        }
+        h5 {
+          color: white;
+          font-family: Times;
+        }
+        ul {
+          list-style-type: none;
+          padding-left: 0;
+        }
+        p {
+          color: black;
+        }
       }
-      ul {
-        list-style-type: none;
-        padding-left: 0;
-      }
+
       &.copyright {
-        margin-top: 20vh;
+        h5 {
+          font-size: 1em;
+        }
       }
     }
   }
